@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mybatis.mapper.ItemsUsersMapper">
+    <select id="selectCommon" resultType="com.demo.mybatis.model.ItemsUsers">
+		SELECT users.id as user_id, items.id as item_id, users.name as user_name, items.name as item_name
+		FROM users
+		JOIN items
+			ON items.user_id = users.id;
+    </select>
+</mapper>
